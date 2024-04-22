@@ -1,5 +1,33 @@
-nav .tweeter-logo {  /* Specific styling for the Tweeter logo */
-  font-family: "Bungee", sans-serif; /* Bungee font for Tweeter logo */
-  font-weight: 400;
-  font-style: normal;
+/* Basic styles for the navigation bar */
+nav {
+  box-sizing: border-box;
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding: 0em 1.5em;
+  display: flex;
+  align-items: center;
+  position: fixed;
+}
+
+/* Styling for the Tweeter logo */
+nav span {
+  font-family: "Bungee", sans-serif;
+  font-size: 1.5em;
+  margin-right: auto;
+}
+
+/* Icon within the navigation */
+nav .fa-angles-down {
+  color: #ca4d35;
+}
+
+nav .write-tweet-container {
+  text-align: center;
+}
+
+/* Styling for text within the navigation */
+nav .write-tweet-container p {
+  margin: 0; 
 }
