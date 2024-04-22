@@ -7,27 +7,24 @@ nav {
   color: #FFFFFF;
   padding: 0em 1.5em;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   position: fixed;
 }
 
 /* Styling for the Tweeter logo */
-nav span {
+.nav-title {
   font-family: "Bungee", sans-serif;
   font-size: 1.5em;
-  margin-right: auto;
-}
-
-/* Icon within the navigation */
-nav .fa-angles-down {
-  color: #ca4d35;
 }
 
 nav .write-tweet-container {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
 }
 
 /* Styling for text within the navigation */
 nav .write-tweet-container p {
-  margin: 0; 
+  margin-bottom: 0;
 }
