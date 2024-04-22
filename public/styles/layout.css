@@ -18,6 +18,15 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: "Source Sans 3", sans-serif; /* Apply Source Sans 3 to all text within body */
+  font-weight: 400; /* Regular weight */
+  font-style: italic; /* Italic style */
+}
+
+nav .tweeter-logo {  /* Specific styling for the Tweeter logo */
+  font-family: "Bungee", sans-serif; /* Bungee font for Tweeter logo */
+  font-weight: 400;
+  font-style: normal;
 }
 
 /*
