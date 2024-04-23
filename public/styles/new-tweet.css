@@ -46,3 +46,15 @@
   background-color: #20355a;
 }
 
+.counter-safe {
+  color: black;
+}
+
+.counter-warning {
+  color: orange;
+}
+
+.counter-exceeded {
+  color: red;
+}
+
