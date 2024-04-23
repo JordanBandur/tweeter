@@ -1,0 +1,11 @@
+header {
+  box-sizing: border-box;
+  height: 520px;
+  width: 100%;
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/cardboard.png");
+}
