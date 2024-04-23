@@ -23,6 +23,12 @@ body {
   font-style: italic; /* Italic style */
 }
 
+main {
+  width: 90%;
+  background-color: #f4f1ec;
+  text-align: center;
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
