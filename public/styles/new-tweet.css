@@ -1,11 +1,14 @@
-.new-tweet h2 {
-  text-align: center;
-}
-
 /* Style for the form title 'Compose Tweet' */
 .new-tweet h2 {
-  font-size: 24px; 
   margin-bottom: 60px;
+}
+
+.new-tweet label {
+  display: block;
+  color: #545149;
+   font-weight: bold;
+  text-align: left;
+  margin-bottom: 20px;
 }
 
 /* Style for the textarea */
@@ -37,3 +40,8 @@
   border-radius: 4px;
   margin-right: 10px;
 }
+
+.new-tweet button:hover {
+  background-color: #20355a;
+}
+
