@@ -8,13 +8,23 @@ $(() => {
       .find('.counter')
       .text(charLeft);
 
+    counter.removeClass('counter-safe counter-warning counter-exceeded');
+
     if (charLeft < 0) {
-      $(counter).css('color', 'red');  // Change color to red if limit is exceeded
+      // When the characters exceed the limit
+      counter.addClass('counter-exceeded');
     } else if (charLeft <= 20) {
-      $(counter).css('color', 'orange');  // Change color to orange if close to limit
+      // When the character count is close to the limit
+      counter.addClass('counter-warning');
     } else {
-      $(counter).css('color', 'black');  // Reset color if within safe range
+      // When within safe range
+      counter.addClass('counter-safe');
     }
+
   });
+
+  // Initialize on page load for any pre-filled values
+  $("#tweet-text").trigger('input');
+  
 });
 
