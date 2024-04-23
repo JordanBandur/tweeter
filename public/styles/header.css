@@ -1,8 +1,8 @@
 header {
   box-sizing: border-box;
-  height: 520px;
+  height: 400px;
   width: 100%;
-  padding-top: 120px;
+  margin-top: 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
