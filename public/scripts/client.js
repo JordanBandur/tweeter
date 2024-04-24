@@ -5,33 +5,21 @@
  */
 
 $(() => {
+  const $tweetsContainer = $('#tweets-container');
+  const $form = $('.new-tweet form');
 
-  // Fake data taken from initial-tweets.json
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
+  const loadTweets = function() {
+    $.ajax({
+      method: 'GET',
+      url: '/tweets',
+      success: (tweets) => {
+        renderTweets(tweets);
       },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ];
+      error: (err) => {
+        console.error('Failed to load tweets:', err);
+      }
+    });
+  };
 
   const renderTweets = function(tweets) {
     $('#tweets-container').empty();
@@ -41,6 +29,7 @@ $(() => {
   };
 
   const createTweetElement = function(tweetData) {
+    const formattedTime = timeago.format(new Date(tweetData.created_at)); // Using timeago.js to format the timestamp
     const $tweet = $(`
     <article class="tweet">
           <header>
@@ -52,7 +41,7 @@ $(() => {
           </header>
           <p class="content">${tweetData.content.text}</p>
           <footer>
-            <time>${tweetData.created_at}</time>
+            <time>${formattedTime}</time>
             <div>
             <i class="fa-solid fa-flag fa-2xs"></i>
             <i class="fa-solid fa-retweet fa-2xs"></i>
@@ -64,6 +53,24 @@ $(() => {
     return $tweet;
   };
 
-  renderTweets(data);
-  
+  $form.on('submit', (event) => {
+    event.preventDefault();
+    const data = $form.serialize();
+
+    // POST the data to the server
+    $.ajax({
+      method: 'POST',
+      url: '/tweets',
+      data: data,
+      success: () => {
+        console.log('tweet POST was a success');
+        loadTweets();
+      },
+      error: (err) => {
+        console.error('Error posting tweet:', err);
+      }
+    });
+  });
+
+  loadTweets();
 });
