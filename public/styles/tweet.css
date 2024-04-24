@@ -2,6 +2,7 @@
   border: 3px black solid;
   padding: 30px;
   margin-top: 60px;
+  transition: box-shadow 0.5s ease;
 }
 
 .tweet:hover {
@@ -49,6 +50,10 @@
 .tweet footer time {
   margin: 0px;
   font-size: 15px;
+}
+
+.tweet footer div i {
+  transition: color 0.4s ease;
 }
 
 .tweet footer div i:hover {
