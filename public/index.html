@@ -61,33 +61,16 @@
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
       <form action="/tweets/" method="post">
-        <label for="tweet-text">What are you humming about?</label> 
+        <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text" placeholder="Tweet something"></textarea>
         <div>
           <button type="submit">Tweet</button>
-          <output name="counter" class="counter counter-safe counter-warning counter-exceeded" for="tweet-text">140</output>
+          <output name="counter" class="counter counter-safe counter-warning counter-exceeded"
+            for="tweet-text">140</output>
         </div>
       </form>
     </section>
     <section class="tweet-container">
-      <article class="tweet">
-        <header>
-          <div>
-            <i class="fa-solid fa-user"></i>
-            <p class="name">Newton</p>
-          </div>
-            <p class="username">@SirIsaac</p>
-        </header>
-        <p class="content">If I have seen further it is by standing on the shoulders of giants.</p>
-        <footer>
-          <time>10 days ago</time>
-          <div>
-          <i class="fa-solid fa-flag fa-2xs"></i>
-          <i class="fa-solid fa-retweet fa-2xs"></i>
-          <i class="fa-solid fa-heart fa-2xs"></i>
-          </div>
-        </footer>
-      </article>
     </section>
   </main>
 </body>
