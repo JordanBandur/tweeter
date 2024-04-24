@@ -80,6 +80,7 @@ $(() => {
       data: data,
       success: () => {
         console.log('tweet POST was a success');
+        $form.find('textarea[name="text"]').val('');
         loadTweets();
       },
       error: (err) => {
