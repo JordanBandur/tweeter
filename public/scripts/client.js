@@ -32,6 +32,7 @@ const data = [
 ];
 
 const renderTweets = function(tweets) {
+  $('#tweets-container').empty();
   tweets.forEach(tweet => {
     $('#tweets-container').prepend(createTweetElement(tweet));
   });
