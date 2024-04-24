@@ -1,0 +1,56 @@
+.tweet {
+  border: 3px black solid;
+  padding: 30px;
+  margin-top: 60px;
+}
+
+.tweet:hover {
+  box-shadow: 6px 6px #c9cae2; 
+}
+
+.username {
+  color: #c3c7de;
+}
+
+.content {
+  text-align: left;
+  padding-bottom: 30px;
+  margin-bottom: 10px;
+  border-bottom: 4px black solid;
+}
+
+.tweet header {
+  height: 0px;
+  background-image: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-bottom: 50px;
+}
+
+.tweet header div {
+  display: flex;
+  align-items: center;
+}
+
+.tweet header div p {
+  font-weight: 300;
+  padding-left: 15px;
+}
+
+.tweet footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.tweet footer .time-ago {
+  margin: 0px;
+  font-size: 15px;
+}
+
+.tweet footer div i:hover {
+  color: #c69c3b; 
+}
