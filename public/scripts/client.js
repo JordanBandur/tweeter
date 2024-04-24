@@ -39,7 +39,7 @@ const renderTweets = function(tweets) {
 };
 
 const createTweetElement = function(tweetData) {
-  const $tweet = `
+  const $tweet = $(`
   <article class="tweet">
         <header>
           <div>
@@ -58,7 +58,7 @@ const createTweetElement = function(tweetData) {
           </div>
         </footer>
       </article>
-  `;
+  `);
   return $tweet;
 };
 
