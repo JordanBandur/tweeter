@@ -22,9 +22,9 @@ $(() => {
   };
 
   const renderTweets = function(tweets) {
-    $('#tweets-container').empty();
+    $tweetsContainer.empty();
     tweets.forEach(tweet => {
-      $('#tweets-container').prepend(createTweetElement(tweet));
+      $tweetsContainer.prepend(createTweetElement(tweet));
     });
   };
 
