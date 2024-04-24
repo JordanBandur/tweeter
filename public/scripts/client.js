@@ -54,24 +54,29 @@ $(() => {
   };
 
   const isTweetValid = function(tweetText) {
-    
+
     if (!tweetText) {
       alert("Error: Tweet cannot be empty!");
-      return;
+      return false;
     }
 
     if (tweetText.length > 140) {
       alert("Error: Tweet exceeds the 140 character limit.");
-      return;
+      return false;
     }
+
+    return true;
   };
 
   $form.on('submit', (event) => {
     event.preventDefault();
-    const data = $form.serialize();
     const tweetText = $form.find('textarea[name="text"]').val().trim();
 
-    isTweetValid(tweetText);
+    if (!isTweetValid(tweetText)) {
+      return;
+    }
+
+    const data = $form.serialize();
 
     // POST the data to the server
     $.ajax({
