@@ -46,7 +46,7 @@
   align-items: flex-start;
 }
 
-.tweet footer .time-ago {
+.tweet footer time {
   margin: 0px;
   font-size: 15px;
 }
