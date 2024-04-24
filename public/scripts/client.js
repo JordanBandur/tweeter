@@ -32,9 +32,9 @@ const data = [
 ];
 
 const renderTweets = function(tweets) {
-  for (const tweet of tweets) {
+  tweets.array.forEach(tweet => {
     $('#tweets-container').append(createTweetElement(tweet));
-  }
+  });
 };
 
 const createTweetElement = function(tweetData) {
