@@ -71,17 +71,19 @@ $(() => {
   };
 
   const isTweetValid = function(tweetText) {
+    const $errorMessage = $('#error-message');
 
     if (!tweetText) {
-      alert("Error: Tweet cannot be empty!");
+      $errorMessage.text("Error: Tweet cannot be empty!").show();
       return false;
     }
 
     if (tweetText.length > 140) {
-      alert("Error: Tweet exceeds the 140 character limit.");
+      $errorMessage.text("Error: Tweet exceeds the 140 character limit.").show();
       return false;
     }
 
+    $errorMessage.hide();
     return true;
   };
 
@@ -102,6 +104,7 @@ $(() => {
       data: data,
       success: () => {
         console.log('tweet POST was a success');
+        $('#error-message').hide();
         $form.find('textarea[name="text"]').val('');
         loadTweets();
       },
