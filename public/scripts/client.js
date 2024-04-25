@@ -28,18 +28,35 @@ $(() => {
     });
   };
 
+  // prevents Cross-Site Scripting (XSS). Used AI to get common characters used in XSS attacks
+  const escapeHTML = function(str) {
+    // Uses the replace method on the string to search for special HTML characters
+    // The /[&<>"']/g is a regular expression that matches characters that need escaping in HTML
+    return str.replace(/[&<>"']/g, function(match) {
+
+      switch (match) { // will replace character with it's HTML equivalent
+        case '&': return '&amp;';
+        case '<': return '&lt;';
+        case '>': return '&gt;';
+        case '"': return '&quot;';
+        case "'": return '&#39;';
+        default: return match;
+      }
+    });
+  };
+
   const createTweetElement = function(tweetData) {
     const formattedTime = timeago.format(new Date(tweetData.created_at)); // Using timeago.js to format the timestamp
     const $tweet = $(`
     <article class="tweet">
           <header>
             <div>
-              <img src="${tweetData.user.avatars}" alt="Profile picture" class="profile-picture">
-              <p class="name">${tweetData.user.name}</p>
+              <img src="${escapeHTML(tweetData.user.avatars)}" alt="Profile picture" class="profile-picture">
+              <p class="name">${escapeHTML(tweetData.user.name)}</p>
             </div>
-              <p class="username">${tweetData.user.handle}</p>
+              <p class="username">${escapeHTML(tweetData.user.handle)}</p>
           </header>
-          <p class="content">${tweetData.content.text}</p>
+          <p class="content">${escapeHTML(tweetData.content.text)}</p>
           <footer>
             <time>${formattedTime}</time>
             <div>
