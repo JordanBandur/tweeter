@@ -54,6 +54,7 @@
 
 .tweet footer div i {
   transition: color 0.4s ease;
+  padding: 4px;
 }
 
 .tweet footer div i:hover {
