@@ -31,7 +31,9 @@
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./scripts/composer-char-counter.js"></script>
 
   <!-- App JS -->
@@ -48,20 +50,18 @@
     </div>
   </nav>
 
-  <header>
+  <header class="profile">
     <div>
       <img src="/images/profile-hex.png">
     </div>
     <div>
-      <h2>Jordan</h2>
+      <p><b>Jordan</b> Bandur</p>
     </div>
   </header>
-
 
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
-      <h2>Compose Tweet</h2>
       <div id="error-message" style="color: red; display: none;"></div>
       <form action="/tweets" method="post">
         <label for="tweet-text">What are you humming about?</label>
