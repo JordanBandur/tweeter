@@ -88,10 +88,10 @@ $(() => {
     <article class="tweet">
           <header>
             <div>
-              <img src="${escapeHTML(tweetData.user.avatars)}" alt="Profile picture" class="profile-picture">
-              <p class="name">${escapeHTML(tweetData.user.name)}</p>
+              <img src="${tweetData.user.avatars}" alt="Profile picture" class="profile-picture">
+              <p class="name">${tweetData.user.name}</p>
             </div>
-              <p class="username">${escapeHTML(tweetData.user.handle)}</p>
+              <p class="username">${tweetData.user.handle}</p>
           </header>
           <p class="content">${escapeHTML(tweetData.content.text)}</p>
           <footer>
