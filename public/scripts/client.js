@@ -63,19 +63,7 @@ $(() => {
 
   // Clear the container before adding new tweets
   const escapeHTML = function(str) {
-    // Uses the replace method on the string to search for special HTML characters
-    // The /[&<>"']/g is a regular expression that matches characters that need escaping in HTML
-    return str.replace(/[&<>"']/g, function(match) {
-
-      switch (match) { // will replace character with it's HTML equivalent
-        case '&': return '&amp;';
-        case '<': return '&lt;';
-        case '>': return '&gt;';
-        case '"': return '&quot;';
-        case "'": return '&#39;';
-        default: return match;
-      }
-    });
+    return $('<div></div>').text(str).html();
   };
 
   // Function to create and return a tweet element based on provided tweet data
