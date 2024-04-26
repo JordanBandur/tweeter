@@ -6,7 +6,10 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -15,12 +18,17 @@ html {
  */
 
 body {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 40px;
+  padding: 20px;
+  margin-top: 220px;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: "Source Sans 3", sans-serif; /* Apply Source Sans 3 to all text within body */
-  font-weight: 400; /* Regular weight */
-  font-style: italic; /* Italic style */
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 400;
+  font-style: italic;
 }
 
 main {
@@ -28,9 +36,45 @@ main {
   margin: 0 auto;
   background-color: inherit;
   text-align: center;
-  padding: 20px;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+@media only screen and (max-width: 1024px) {
+  body {
+    display: block;
+    margin-top: 0px;
+    padding: 0px;
+    padding-bottom: 10px;
+  }
+
+  body nav {
+    position: relative;
+    height: auto;
+  }
+
+  header.profile {
+    box-sizing: border-box;
+    height: auto;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: none;
+    background-color: #4056A1;
+    color: white;
+  }
+
+  .profile p {
+    margin-bottom: 20px;
+  }
+
+  .tweet header {
+    margin: 0px;
+  }
+}
