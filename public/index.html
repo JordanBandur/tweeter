@@ -3,6 +3,8 @@
 
 <head>
   <!-- Meta Information -->
+
+  <!-- Setting the viewport to ensure proper scaling and dimensions on all devices -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Tweeter - Home Page</title>
@@ -46,7 +48,7 @@
     <span class="nav-title">tweeter</span>
     <div class="write-tweet-container">
       <p><b>Write</b> a new tweet</p>
-      <i class="fa-solid fa-angles-down"></i>
+      <button id="toggle-tweet"><i class="fa-solid fa-angles-down"></i></button></i>
     </div>
   </nav>
 
@@ -75,6 +77,8 @@
     </section>
     <section id="tweets-container">
     </section>
+    <!-- Button to scroll back to the top -->
+    <button id="scroll-top-btn" style="display: none;">Top</button>
   </main>
 </body>
 
