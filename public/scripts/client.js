@@ -22,6 +22,23 @@ $(() => {
     }
   });
 
+  // Check if page is scrolled more than 200 pixels
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 200) {
+      $('#back-to-top').fadeIn();
+    } else {
+      $('#back-to-top').fadeOut();
+    }
+  });
+
+  // Click event to scroll to top
+  $('#back-to-top').click(function() {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 800);
+    return false;
+  });
+
   // Function to fetch tweets from the server via GET request
   const loadTweets = function() {
     $.ajax({
