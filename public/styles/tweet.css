@@ -6,7 +6,7 @@
 }
 
 .tweet:hover {
-  box-shadow: 6px 6px #c9cae2; 
+  box-shadow: 6px 6px #c9cae2;
 }
 
 .username {
@@ -58,5 +58,5 @@
 }
 
 .tweet footer div i:hover {
-  color: #c69c3b; 
+  color: #c69c3b;
 }

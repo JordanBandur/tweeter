@@ -23,7 +23,7 @@ nav {
 nav .write-tweet-container {
   display: flex;
   flex-direction: column;
-  align-items: center;  
+  align-items: center;
 }
 
 /* Styling for text within the navigation */
