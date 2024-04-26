@@ -4,10 +4,12 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// Ensure all operations only run once the document is fully loaded
 $(() => {
   const $tweetsContainer = $('#tweets-container');
   const $form = $('.new-tweet form');
 
+  // Function to fetch tweets from the server via GET request
   const loadTweets = function() {
     $.ajax({
       method: 'GET',
@@ -21,14 +23,15 @@ $(() => {
     });
   };
 
+  // Function to render tweets to the DOM
   const renderTweets = function(tweets) {
-    $tweetsContainer.empty();
+    $tweetsContainer.empty(); // Clear the container before adding new tweets
     tweets.forEach(tweet => {
       $tweetsContainer.prepend(createTweetElement(tweet));
     });
   };
 
-  // prevents Cross-Site Scripting (XSS). Used AI to get common characters used in XSS attacks
+  // Clear the container before adding new tweets
   const escapeHTML = function(str) {
     // Uses the replace method on the string to search for special HTML characters
     // The /[&<>"']/g is a regular expression that matches characters that need escaping in HTML
@@ -45,8 +48,12 @@ $(() => {
     });
   };
 
+  // Function to create and return a tweet element based on provided tweet data
   const createTweetElement = function(tweetData) {
-    const formattedTime = timeago.format(new Date(tweetData.created_at)); // Using timeago.js to format the timestamp
+
+    // Format the creation time of the tweet using timeago.js for relative time
+    const formattedTime = timeago.format(new Date(tweetData.created_at));
+
     const $tweet = $(`
     <article class="tweet">
           <header>
@@ -70,6 +77,7 @@ $(() => {
     return $tweet;
   };
 
+  // Check if the tweet text is empty and display error if so
   const isTweetValid = function(tweetText) {
     const $errorMessage = $('#error-message');
 
@@ -87,15 +95,17 @@ $(() => {
     return true;
   };
 
+  // Event handler for form submission to post a new tweet
   $form.on('submit', (event) => {
     event.preventDefault();
     const tweetText = $form.find('textarea[name="text"]').val().trim();
 
+    // Validate the tweet text, and return early if invalid
     if (!isTweetValid(tweetText)) {
       return;
     }
 
-    const data = $form.serialize();
+    const data = $form.serialize(); // Serialize the form data for POST request
 
     // POST the data to the server
     $.ajax({
@@ -105,8 +115,9 @@ $(() => {
       success: () => {
         console.log('tweet POST was a success');
         $('#error-message').hide();
-        $form.find('textarea[name="text"]').val('');
-        loadTweets();
+        $form.find('textarea[name="text"]').val(''); // Clear the text area
+        $form.find('output[name="counter"]').text(140); // Reset the character counter
+        loadTweets(); // Reload the tweets to display the new one
       },
       error: (err) => {
         console.error('Error posting tweet:', err);
@@ -114,5 +125,6 @@ $(() => {
     });
   });
 
+  // Initial call to load tweets and populate the list
   loadTweets();
 });
