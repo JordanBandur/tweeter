@@ -30,3 +30,32 @@ nav .write-tweet-container {
 nav .write-tweet-container p {
   margin-bottom: 0;
 }
+
+#toggle-tweet {
+  background: none;
+  border: none;
+  color: white;
+}
+
+#toggle-tweet {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  animation: none;
+}
+
+#toggle-tweet:hover {
+  animation: hover-effect 1s ease-in-out infinite alternate;
+  color: #a08a40;
+}
+
+@keyframes hover-effect {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-5px);
+  }
+}
