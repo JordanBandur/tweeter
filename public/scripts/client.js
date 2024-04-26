@@ -9,6 +9,19 @@ $(() => {
   const $tweetsContainer = $('#tweets-container');
   const $form = $('.new-tweet form');
 
+  // Toggle visibility of the new tweet section when clicking on the fa-angles-down icon
+  $('#toggle-tweet').on('click', () => {
+    const $newTweetSection = $('.new-tweet');
+
+    // Check if the new tweet section is visible
+    if ($newTweetSection.is(':visible')) {
+      $newTweetSection.slideUp(); // Use jQuery's slideUp to hide the section with an animation
+    } else {
+      $newTweetSection.slideDown(); // Use jQuery's slideDown to show the section with an animation
+      $('#tweet-text').focus(); // Automatically focus the textarea after showing the section
+    }
+  });
+
   // Function to fetch tweets from the server via GET request
   const loadTweets = function() {
     $.ajax({
